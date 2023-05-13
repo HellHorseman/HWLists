@@ -3,6 +3,8 @@ package Employee;
 import Exceptions.EmployeeNotFoundException;
 import org.springframework.stereotype.Service;
 
+import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 import java.util.ArrayList;
 @Service
@@ -40,5 +42,10 @@ public class EmployeeServiceImpl implements EmployeeService {
             return employee;
         }
         throw new EmployeeNotFoundException("Employee not found");
+    }
+
+    @Override
+    public Collection<Employee> findAll() {
+        return Collections.unmodifiableList(employeeList);
     }
 }
