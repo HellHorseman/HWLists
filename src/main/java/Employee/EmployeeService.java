@@ -9,5 +9,5 @@ public interface EmployeeService {
 
     Employee find(String name, String surname);
 
-//    Collection<Employee> findAll();
+    Collection<Employee> findAll();
 }

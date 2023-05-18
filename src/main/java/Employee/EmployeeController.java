@@ -31,9 +31,9 @@ public class EmployeeController {
         return service.find(name, surname);
     }
 
-//    @GetMapping
-//    public Collection<Employee> findAll() {
-//        return service.findAll();
-//    }
+    @GetMapping
+    public Collection<Employee> findAll() {
+        return service.findAll();
+    }
 
 }

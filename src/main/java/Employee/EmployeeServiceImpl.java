@@ -8,28 +8,27 @@ import java.util.*;
 
 @Service
 public class EmployeeServiceImpl implements EmployeeService {
-    private final Map<String, Employee> employeeList;
+    private final Map<String, Employee> employees;
 
     public EmployeeServiceImpl() {
-        this.employeeList = new HashMap<String, Employee>();
+        this.employees = new HashMap<>();
     }
 
     @Override
     public Employee add(String name, String surname) {
         Employee employee = new Employee(name, surname);
-        if (employeeList.containsKey(employee.getFullName())) {
+        if (employees.containsKey(employee.getFullName())) {
             throw new EmployeeAlreadyAddedException("Employee already added");
         }
-        employeeList.put(employee.getFullName(), employee);
+        employees.put(employee.getFullName(), employee);
         return employee;
     }
 
     @Override
     public Employee remove(String name, String surname) {
         Employee employee = new Employee(name, surname);
-        if (employeeList.containsKey(employee.getFullName())) {
-            employeeList.remove(employee);
-            return employee;
+        if (employees.containsKey(employee.getFullName())) {
+           return employees.remove(employee.getFullName());
         }
         throw new EmployeeNotFoundException("Employee not found");
     }
@@ -37,14 +36,14 @@ public class EmployeeServiceImpl implements EmployeeService {
     @Override
     public Employee find(String name, String surname) {
         Employee employee = new Employee(name, surname);
-        if (employeeList.containsKey(employee.getFullName())) {
-            return employee;
+        if (employees.containsKey(employee.getFullName())) {
+            return employees.get(employee.getFullName());
         }
         throw new EmployeeNotFoundException("Employee not found");
     }
 
-//    @Override
-//    public Collection<Employee> findAll() {
-//        return Collections.unmodifiableMap(employeeList.entrySet());
-//    }
+    @Override
+    public Collection<Employee> findAll() {
+        return Collections.unmodifiableCollection(employees.values());
+    }
 }

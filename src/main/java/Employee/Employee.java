@@ -6,12 +6,11 @@ public class Employee {
 
     private final String name;
     private final String surname;
-    private final String fullName;
+
 
     public Employee(String name, String surname) {
         this.name = name;
         this.surname = surname;
-        this.fullName = name + surname;
     }
 
     public String getName() {
@@ -23,7 +22,7 @@ public class Employee {
     }
 
     public String getFullName() {
-        return this.fullName;
+        return name + " " + surname;
     }
 
     @Override
