@@ -1,7 +1,8 @@
-package Employee;
+package pro.sky.listExample.Service;
 
-import Exceptions.EmployeeAlreadyAddedException;
-import Exceptions.EmployeeNotFoundException;
+import pro.sky.listExample.Employee.Employee;
+import pro.sky.listExample.Exceptions.EmployeeAlreadyAddedException;
+import pro.sky.listExample.Exceptions.EmployeeNotFoundException;
 import org.springframework.stereotype.Service;
 
 import java.util.*;
