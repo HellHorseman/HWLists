@@ -26,9 +26,9 @@ public class DepartmentServiceImpl implements DepartmentService {
 
     @Override
     public Map<Integer, List<Employee>> printAllEmployee() {
-        Map<Integer, List<Employee>> collect = employeeService.findAll().stream()
+        Map<Integer, List<Employee>> employee = employeeService.findAll().stream()
                 .collect(Collectors.groupingBy(Employee::getDepartment));
-        return collect;
+        return employee;
     }
 
     @Override

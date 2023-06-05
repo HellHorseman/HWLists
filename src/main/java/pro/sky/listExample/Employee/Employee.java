@@ -39,9 +39,6 @@ public class Employee {
         return salary;
     }
 
-    public void setSalary(int setSalary) {
-        this.salary = setSalary;
-    }
 
     @Override
     public boolean equals(Object o) {
