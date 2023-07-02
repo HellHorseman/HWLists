@@ -42,4 +42,10 @@ public class DepartmentServiceImpl implements DepartmentService {
         return employeeService.findAll().stream().filter(p -> p.getDepartment() == department)
                 .max(Comparator.comparingInt(Employee::getSalary));
     }
+
+    @Override
+    public Optional<Employee> sumDeptSal(Integer department) {
+        return employeeService.findAll().stream().filter(p -> p.getDepartment() == department)
+                .sum(Comparator.comparingInt(Employee::getSalary));
+    }
 }
