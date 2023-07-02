@@ -16,5 +16,5 @@ public interface DepartmentService {
 
     Optional<Employee> maxDeptSal(Integer department);
 
-    Optional<Employee> sumDeptSal(Integer department);
+    Integer sumDeptSal(Integer department);
 }

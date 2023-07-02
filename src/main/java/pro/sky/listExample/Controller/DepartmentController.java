@@ -18,7 +18,7 @@ public class DepartmentController {
     }
 
     @GetMapping("{id}/salary/sum")
-    public Optional<Employee> sumDeptSal (@PathVariable Integer department) {
+    public Integer sumDeptSal (@PathVariable Integer department) {
         return departmentService.sumDeptSal(department);
     }
 

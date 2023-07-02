@@ -44,8 +44,8 @@ public class DepartmentServiceImpl implements DepartmentService {
     }
 
     @Override
-    public Optional<Employee> sumDeptSal(Integer department) {
+    public Integer sumDeptSal(Integer department) {
         return employeeService.findAll().stream().filter(p -> p.getDepartment() == department)
-                .sum(Comparator.comparingInt(Employee::getSalary));
+                .mapToInt(Employee::getSalary).sum();
     }
 }
